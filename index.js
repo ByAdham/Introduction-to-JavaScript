@@ -132,8 +132,32 @@ Use the hungryDog function and feeding requirements below to do the following:
     
   NOTE: If done correctly, a weight of 15 lbs and age of 1 year would return 0.44999999999999996
 */  
-function hungryDog(){
-}
+var foodAmount;
+
+function hungryDog(dogAge,dogWeight){
+    if (dogAge >=1) {
+      if (dogWeight <=5){
+      foodAmount = dogWeight*0.05;
+      } else if (6 <= dogWeight && dogWeight <= 10) {
+        foodAmount = dogWeight*0.04;
+      } else if (11<= dogWeight && dogWeight <=15) {
+        foodAmount = dogWeight*0.03;
+      } else {
+        foodAmount = dogWeight*0.02;
+      }
+    }else{
+      if (4/12 >= dogAge && dogAge >= 2/12) {
+        foodAmount = dogWeight*0.1
+      }
+      else if 
+        (7/12 >= dogAge && dogAge > 4/12) {
+          foodAmount = dogWeight*0.05
+        }
+        else{foodAmount = dogWeight*0.04}
+    }
+    return foodAmount;
+  }
+console.log(hungryDog(1,15));
 
 
 
@@ -150,12 +174,48 @@ Use the game function below to do the following:
   
   HINT: While you can complete this with only conditionals based on strings, it may help to equate choice to a number when using Math.random()
 */
+//Declare the global variables
+let userChoice = "Scissors";
+let wordComputerChoice;
+let result;
 
-function game(/*add your code here*/){
-    /*add your code here*/
+//Generate the computer choice
+let numberComputerChoice = Math.random();
+
+// Convert random numbers to rock, paper or scissors
+function conversion (randomNumber){
+  if (randomNumber < 1/3){
+  wordComputerChoice = "Rock"
+  }else if (2/3> randomNumber >1/3){
+  wordComputerChoice = "Paper"
+  } else {
+  wordComputerChoice = "Scissors"
+  }
+  return wordComputerChoice;
 }
-  
-  
+
+//Call the conversion on the randomly generated computer number
+conversion(numberComputerChoice);
+
+//Play the game
+function game(userChoice, wordComputerChoice) 
+{
+  if (userChoice===wordComputerChoice){
+    result ="it's a tie"
+  } else {
+    if (userChoice ==="Rock" && wordComputerChoice ==="Scissors" ||userChoice ==="Scissors" && wordComputerChoice === "Paper" ||userChoice === "Paper" && wordComputerChoice === "Rock") {
+      result = "you win!"
+    }
+    else {
+      result = "you lose!"
+    }
+  }
+  return result;
+}
+
+console.log(wordComputerChoice);
+
+console.log(game(userChoice, wordComputerChoice));
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -198,8 +258,12 @@ Using the annoyingSong function below do the following:
       "(number) bottles of soda on the wall, (number) bottles of soda, take one down pass it around (number left over) bottles of soda on the wall"
 */
 
-function annoyingSong(/*add your code here*/){
+let repeat = 5;
+function annoyingSong(repititions){
         /*add your code here*/
+    for (let i= repeat; i>0; i--) { 
+      return `${i} bottles of soda on the wall, ${i} bottles of soda, take one down pass it around ${i-1} bottles of soda on the wall`
+   }
   }
 
 
@@ -217,13 +281,29 @@ Using the grade function below do the following:
    60-69 =  D 
    below 60 = F
 */
+
+let score = 75;
+let letterGrade; 
   
-function grade(/*add your code here*/){
-    /*add your code here*/
+function grade(gradeNumber){ 
+  if (gradeNumber<60) {
+    letterGrade = "you got a "+"F"
+    } else if (60 <= gradeNumber && gradeNumber <=69){
+      letterGrade ="you got a "+"D"
+    } else if (70 <= gradeNumber && gradeNumber <=79){
+      letterGrade ="you got a "+"C"
+    } else if (80 <= gradeNumber && gradeNumber <=89){
+      letterGrade ="you got a "+"B"
+    } else {
+      letterGrade = "you got a "+"A"
+    }
+    return letterGrade;
   }
+
+ 
   
-  
-  
+  grade(score);
+ 
   
 
 /*💪💪💪💪💪💪💪💪💪💪 Stretch 💪💪💪💪💪💪💪💪💪💪*/
