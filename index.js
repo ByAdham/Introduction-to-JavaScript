@@ -134,7 +134,7 @@ Use the hungryDog function and feeding requirements below to do the following:
 */  
 var foodAmount;
 
-function hungryDog(dogAge,dogWeight){
+function hungryDog(dogWeight, dogAge){
     if (dogAge >=1) {
       if (dogWeight <=5){
       foodAmount = dogWeight*0.05;
@@ -202,20 +202,19 @@ function game(userChoice, wordComputerChoice)
 {
   if (userChoice===wordComputerChoice){
     result ="it's a tie"
-  } else {
-    if (userChoice ==="Rock" && wordComputerChoice ==="Scissors" ||userChoice ==="Scissors" && wordComputerChoice === "Paper" ||userChoice === "Paper" && wordComputerChoice === "Rock") {
+  } else if ((userChoice ==="Rock" && wordComputerChoice ==="Scissors") || (userChoice ==="Scissors" && wordComputerChoice === "Paper") || (userChoice === "Paper" && wordComputerChoice === "Rock")) {
       result = "you win!"
-    }
+  }
+    
     else {
       result = "you lose!"
     }
-  }
   return result;
-}
+  }
 
 console.log(wordComputerChoice);
 
-console.log(game(userChoice, wordComputerChoice));
+console.log(userChoice, wordComputerChoice);
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
