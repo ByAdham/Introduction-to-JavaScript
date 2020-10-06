@@ -228,9 +228,16 @@ Using the miles function below do the following:
   3. Return the number of miles
 */
 
-function miles(/*add your code here*/){
+let kms;
+let convertedMiles;
+
+function miles(numberOfMiles){
     /*add your code here*/
+  convertedMiles = numberOfMiles*0.621371;
+  return convertedMiles;
   }
+
+  miles(10);
 
 
 
@@ -242,9 +249,16 @@ Using the feet function below do the following:
   3. Return number of feet
 */
 
-function feet(/*add your code here*/){
+let cms;
+let convertedFeet;
+
+function feet(numberOfCMs){
     /*add your code here*/
+  convertedFeet = numberOfCMs/30.48;
+  return convertedFeet;
   }
+
+  miles(100);
  
 
 
